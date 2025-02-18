@@ -9,8 +9,6 @@ export default function SubtitleConverter() {
   const [selectedFormat, setSelectedFormat] = useState("Markdown");
   const [aiPrompt, setAiPrompt] = useState("");
   const [convertedText, setConvertedText] = useState("");
-  const [aiSummary, setAiSummary] = useState("");
-  const [showSummary, setShowSummary] = useState(false);
   const [notification, setNotification] = useState<string | null>(null);
 
 
@@ -75,10 +73,6 @@ export default function SubtitleConverter() {
     }
 
     setConvertedText(formattedContent.trim());
-    
-    if (aiPrompt) {
-      setAiSummary(`Summary based on prompt: "${aiPrompt}"`);
-    }
   };
 
   const showNotification = (message: string) => {
